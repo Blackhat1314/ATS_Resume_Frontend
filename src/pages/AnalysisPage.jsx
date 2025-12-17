@@ -329,38 +329,7 @@ function AnalysisPage({ token, onLogout }) {
               </div>
             </div>
 
-            {analysisResult.atsScore < 70 && (
-              <div className="edit-resume-section">
-                <div className="edit-resume-card">
-                  <h2>✏️ Improve Your Resume</h2>
-                  <p className="edit-resume-description">
-                    Your ATS score is below 70%. Let AI enhance your resume by adding missing keywords and incorporating improvement suggestions to boost your score!
-                  </p>
-                  <button
-                    onClick={handleGenerateImprovedPdf}
-                    disabled={generatingPdf}
-                    className="generate-pdf-button"
-                  >
-                    {generatingPdf ? (
-                      <>
-                        <span className="spinner"></span>
-                        Generating Improved PDF...
-                      </>
-                    ) : (
-                      <>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                          <polyline points="17 8 12 3 7 8"></polyline>
-                          <line x1="12" y1="3" x2="12" y2="15"></line>
-                        </svg>
-                        Generate Improved Resume PDF
-                      </>
-                    )}
-                  </button>
-                  {error && <div className="error-message">{error}</div>}
-                </div>
-              </div>
-            )}
+            
 
             {/* Keywords Section */}
             {(analysisResult.matchedKeywords?.length > 0 || analysisResult.missingKeywords?.length > 0) && (
